@@ -1,0 +1,24 @@
+{
+  "name": "mongoose-crud-application",
+  "version": "1.0.0",
+  "description": "Mongoose CRUD Application",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mwarnsley/Mongoose-CRUD-Application.git"
+  },
+  "author": "Marcus Warnsley",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mwarnsley/Mongoose-CRUD-Application/issues"
+  },
+  "homepage": "https://github.com/mwarnsley/Mongoose-CRUD-Application#readme",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "express": "^4.15.2",
+    "mongoose": "^4.9.6"
+  }
+}
