@@ -71,6 +71,22 @@ app.post('/book', function(req, res) {
   })
 });
 
+app.put('/book/:id', function(req, res) {
+  Book.findOneAndUpdate({
+    _id: req.params.id
+  },
+  {$set: {title: req.body.title}},
+  {upsert: true},
+  function(err, newBook) {
+    if (err) {
+      console.log('Error Occured');
+    } else {
+      console.log(newBook);
+      res.status(204);
+    }
+  });
+});
+
 // Starting the server using app listen on the port specified
 app.listen(port, function() {
   console.log('app listening on port: ', port);
