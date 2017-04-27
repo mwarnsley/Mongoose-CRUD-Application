@@ -16,16 +16,29 @@ app.get('/books', function(req, res) {
   Book.find({})
     .exec(function(err, books) {
       if (err) {
-        res.send('Error has occured');
+        res.send('Error Occured');
       } else {
-        console.log(books);
         res.json(books);
       }
     });
 });
 // Send Happy Message to display to user
 app.get('/', function(req, res) {
-  res.send('happy to be here');
+  res.send('Page is Here');
+});
+// New route for getting a book by ID
+app.get('/books/:id', function(req, res) {
+  console.log('GETTING ONE BOOK');
+  Book.findOne({
+    _id: req.params.id
+  })
+  .exec(function(err, book) {
+    if (err) {
+      res.send('Error Occured');
+    } else {
+      res.json(book);
+    }
+  });
 });
 // Starting the server using app listen on the port specified
 app.listen(port, function() {
